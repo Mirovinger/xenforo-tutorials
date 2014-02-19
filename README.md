@@ -5,3 +5,4 @@ All the tutorials I wrote for [XenForo](http://www.xenforo.com). You can find th
 
 - [How to read and write into the database (with a page)](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-read-and-write-into-the-database-with-a-page/how-to-read-and-write-into-the-database-with-a-page.md)
 - [How to create your own helpers](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-create-your-own-helpers/how-to-create-your-own-helpers.md)
+- [How to show a forum in a page](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-show-a-forum-in-a-page/how-to-show-a-forum-in-a-page.md)

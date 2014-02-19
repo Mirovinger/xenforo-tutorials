@@ -3,8 +3,6 @@
 
 I'll teach how to read and write to the database using XenForo. This tutorial can be found also [here](http://xenforo.com/community/resources/how-to-read-and-write-into-the-database-with-a-page.328/).
 
-<!--more-->
-
 ## Steps
 
 This tutorial consists in 11 steps:
