@@ -169,7 +169,7 @@ Figuring out where you need to create your classes is easy, just look inside the
 `ForumLastPostPrefix_Extend_Model_Forum`
 
 
-So for the first, `ForumLastPostPrefix_Extend_NodeHandler_Forum`, you can follow this path to add your file:
+So for the first, `ForumLastPostPrefix_Extend_NodeHandler_Forum`, you can follow this path to add your file and folders:
 
 |-xenforo_root  
 |---library  
@@ -179,7 +179,7 @@ So for the first, `ForumLastPostPrefix_Extend_NodeHandler_Forum`, you can follow
 |---------------- Forum.php (**new file**)  
 
 
-In the new file, put the contents below (don't forget to open the php tag):
+In the new *Forum.php* file, add the contents from below (don't forget to open the php tag):
 
 ```php
 class ForumLastPostPrefix_Extend_NodeHandler_Forum extends XFCP_ForumLastPostPrefix_Extend_NodeHandler_Forum
