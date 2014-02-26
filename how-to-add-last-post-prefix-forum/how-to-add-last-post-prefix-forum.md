@@ -17,7 +17,7 @@ This tutorial consists in 5 steps:
 
 ### <a name="step_1__creating_the_addon"></a>Step 1 - Creating the Add-on
 
-First we need to create a new add-on. This is easy enough to do, but first you need to enable Debug Mode. To do this, simply open up your *library/config.php* file, and add `$config['debug'] = true;` to it.
+Let's start by creating a new add-on. This is easy enough to do, but first you need to enable Debug Mode. To do this, simply open up your *library/config.php* file, and add `$config['debug'] = true;` to it.
 
 Now to create a new add-on, go to **AdminCP -> Home -> List Add-ons** and click on **Create Add-on**. In this screen, fill out the fields as follows:
 
