@@ -43,10 +43,11 @@ In the `xf_forum` table, we have the following columns:
 `last_post_username` => The username of the user who posted in that forum  
 `last_thread_title` => The title of the last thread of that forum
 
-That's it. No more columns related to 'last' something in forums. So, how do we gonna take the prefix of the last post? That's pretty simple.
-The prefix information that we want is in another table called `xf_thread`. It is there where all the threads records are, including the `prefix_id` of each thread. This means that we will have, in someway to get info from this table. But how?
+That's it. There are no more columns relating to the 'last' post in the forum. So, how do are we going to take the prefix of the last post? Well, it's pretty simple actually.
 
-Everytime we visit the forum list, XenForo calls a function called `getExtraDataForNodes`, that gets the extra, node-type-specified data for the list of nodes. In this case, the node is a forum. This function is at the following path: `xenforo_root/library/XenForo/NodeHandler/Forum.php`, line 80. Take a look:
+The prefix information that we want is in another table called `xf_thread`. It is here where all the information regarding threads is recorded, including the `prefix_id` of each thread. This means that we will have to, in someway,  get info from this table. But how?
+
+Let's first figure out how Xenforo works. For every visit to the forum list pages, XenForo calls a function called `getExtraDataForNodes`. This function gets the extra, node-type-specified data for the list of nodes. In this case, the node is a forum. This function is at the following path: `xenforo_root/library/XenForo/NodeHandler/Forum.php`, line 80. Here's a look at the code:
 
 ```php
 public function getExtraDataForNodes(array $nodeIds)
@@ -58,7 +59,7 @@ public function getExtraDataForNodes(array $nodeIds)
 }
 ```
 
-In the very last line of the function, we have a call to another function called `getExtraForumDataForNodes`! This function is inside the forum model, as we can see. The forum model is at the following path: `xenforo_root/library/XenForo/Model/Forum.php` and the contents of the function is:
+In the very last line of this function, we have a call to another function called `getExtraForumDataForNodes`. This function is inside the forum model, as we can see at the following path: `xenforo_root/library/XenForo/Model/Forum.php` and the content of this function is:
 
 ```php
 public function getExtraForumDataForNodes(array $nodeIds, array $fetchOptions = array())
@@ -81,21 +82,21 @@ public function getExtraForumDataForNodes(array $nodeIds, array $fetchOptions = 
 }
 ```
 
-What it does? 'Gets the extra data that applies to the specified forum nodes.'. If you look closer, there is another (!) function called `prepareForumJoinOptions`. This function prepare some MySql joins to get extra information from another tables...
+But what does it do? It "gets the extra data that applies to the specified forum nodes". If you look closer, there is another (!) function called `prepareForumJoinOptions`. This function prepares some MySQL joins to get extra information from another table.
 
 Wait a moment...
 
-...there it is! We can use this function to get information from the `xf_thread` table! Because it is in this table that it is recorded the `prefix_id` column!
+...there it is! We can use this function to get information from the `xf_thread` table! Because here, in this table, is where the `prefix_id` column lives and the information we want is recorded.
 
-But the function `prepareForumJoinOptions` does not join the `xf_thread`, so we have to do this for ourselves.
+But the function `prepareForumJoinOptions` doesn't join `xf_thread` so we have to do this for ourselves.
 
-After all, we can conclude this:
+After all, we conclude this:
 
-- We have to 'overwrite' two functions. I mean 'overwrite' because we will actually add some new content to the functions.
+- We have to 'overwrite' or modify two functions. I say 'overwrite' but we will actually add some new code to the functions.
 - The functions are `getExtraDataForNodes` and `prepareForumJoinOptions`.
-- To do this we need to create Listeners. It's a fact. The listeners will extend the classes and we will be able to write our own functions.
+- To do this we need to create Listeners. The listeners will extend the classes, consequently allowing us to write our own functions.
 
-The idea is this: we have the last_post_id inside xf_forum table. So let's join the post table where the post_id is equal to the last_post_id. Having the post info, we have the thread_id of that post. Having the thread_id, we will join the xf_thread table where thread_id is equal to the post.thread_id. After that, we'll have the prefix_id.
+I propose we do this as follows: we have the `last_post_id` inside `xf_forum` table. So let's join the post table where the `post_id` is equal to the `last_post_id`. Having the post details means we have the `thread_id` of that post. Then with the `thread_id`, we will join the `xf_thread` table where `thread_id` is equal to the `post.thread_id`. After that, we'll have the prefix_id.
 
 
 
