@@ -19,7 +19,7 @@ This tutorial consists of 5, easy to follow steps:
 
 Let's start by creating a new add-on. This is easy enough to do, but first you need to enable Debug Mode. To do this, simply open up your *library/config.php* file, and add `$config['debug'] = true;` to it.
 
-Now to create a new add-on, go to **AdminCP -> Home -> List Add-ons** and click on **Create Add-on**. In this screen, fill out the fields as follows:
+Now to create a new add-on, go to **AdminCP -> Home -> List Add-ons** and click on **Create Add-on**. Here, fill out the fields as follows:
 
 - **Add-on ID**: ForumLastPostPrefix
 - **Title**: Forum Last Post Prefix
