@@ -258,7 +258,7 @@ And turn into this:
 
 ![image 6](images/6.png)
 
-To find which template that is, you can use Chrome's DevTools. With them open, inspect the classes nearby, then search for them in the **AdminCP -> Search Templates** section. So the two templates we need to modify are:
+To find which template that is, you can use Chrome's DevTools. With them open, inspect the classes nearby, then search for them in the **AdminCP -> Search Templates** section - but I'll spare you the trouble here - the two templates we need to modify are:
 
 `node_category_level_2`  
 `node_forum_level_2`
