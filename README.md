@@ -10,3 +10,4 @@ All the tutorials I wrote for [XenForo](http://www.xenforo.com). You can find th
 - [How to use tabs to separate your add on options](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-use-tabs-to-separate-your-add-on-options/how-to-use-tabs-to-separate-your-add-on-options.md)
 - [How to add a new sidebar in the forum list](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-add-a-new-sidebar-in-the-forum-list/how-to-add-a-new-sidebar-in-the-forum-list.md)
 - [How to show a post in a page](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-show-a-post-in-a-page/how-to-show-a-post-in-a-page.md)
+- [How to add the last post prefix to forum list](https://github.com/Fuhrmann/xenforo-tutorials/blob/master/how-to-add-last-post-prefix-forum/how-to-add-last-post-prefix-forum.md)
