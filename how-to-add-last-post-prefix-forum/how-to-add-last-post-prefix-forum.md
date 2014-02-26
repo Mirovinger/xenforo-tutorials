@@ -184,7 +184,7 @@ In the new *Forum.php* file, add the contents from below (don't forget to open t
 ```php
 class ForumLastPostPrefix_Extend_NodeHandler_Forum extends XFCP_ForumLastPostPrefix_Extend_NodeHandler_Forum
 {
-    // Remember above this same function? Now we are overwriting it to add a custom
+    // Remember this function from earlier? We are now overwriting it with our version, which adds a custom
     // join option
     public function getExtraDataForNodes(array $nodeIds)
     {
@@ -219,13 +219,13 @@ In the new file, put the contents below (don't forget to open the php tag):
 class ForumLastPostPrefix_Extend_Model_Forum extends XFCP_ForumLastPostPrefix_Extend_Model_Forum
 {
     /*
-     * This is the same function of XenForo. But since here we don't want to overwrite, we will
+     * This is the same function from XenForo. But since we don't want to overwrite things here, we will
      * call the parent first, get the contents and then later apply our join to another table.
      */
 
     public function prepareForumJoinOptions(array $fetchOptions)
     {
-        /* The line below return an array with two keys: 'selectFields' and 'joinTables'.
+        /* The line below returns an array with two keys: 'selectFields' and 'joinTables'.
          * One of them means: "which fields should I select to this forum?" The another means:
          * "Which tables should I join to get some extra data to this forum?"
          */
@@ -244,8 +244,8 @@ class ForumLastPostPrefix_Extend_Model_Forum extends XFCP_ForumLastPostPrefix_Ex
 
 To explain better the function above:
 
-- We get the selected fields and append some more: post.thread_id and thread.prefix_id;
-- Then we append two new JOINS: with the post table and with the thread table. 'But why?', you may ask. That's because the `xf_forum` table have the `last_post_id`. With the last post id, we can the post. With the post, we can get the thread. And with the thread we can get the `prefix_id` of the last post of that forum.
+- We get the selected fields and append some more: `post.thread_id` and `thread.prefix_id`;
+- Then we append two new JOINS: with the post table and with the thread table. But you might ask why. Because the `xf_forum` table has `last_post_id` and with this, we can get the post. With the post, we can get the thread. And with the thread we can get the `prefix_id` of the last post of that forum.
 
 
 ### <a name="step_5__creating_the_template_modifications"></a>Step 5 - Creating the Template Modifications
