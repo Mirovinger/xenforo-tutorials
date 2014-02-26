@@ -258,12 +258,12 @@ And turn into this:
 
 ![image 6](images/6.png)
 
-To find which template is that, you can open the Chrome DevTools, inspect the classes arround and search in the AdminCP -> Search Templates section. But I'll just throw here the two templates names we have to modify:
+To find which template that is, you can use Chrome's DevTools. With them open, inspect the classes nearby, then search for them in the **AdminCP -> Search Templates** section. So the two templates we need to modify are:
 
-`node_category_level_2`
+`node_category_level_2`  
 `node_forum_level_2`
 
-To create a template modification, go to **AdminCP -> Appearance -> Template Modifications** and click in the **+Create Template Modification** button. In the following screen, fill with the following data:
+To create a template modification, go to **AdminCP -> Appearance -> Template Modifications** and click on **+Create Template Modification**. Here, add the following data:
 
 - **Template**: node_category_level_2
 - **Modification Key**: LastPosPrefix_node_category_level_2
@@ -302,10 +302,12 @@ Save!
 
 ![image 8](images/8.png)
 
-Now go to your forum list and you'll have the prefix of the each last post of each forum.
+That's it done!
+
+Now simply go to your forum list and you'll have the prefix of the last post for each forum. Wasn't so difficult after all was it?
 
 
-Tip: If are having problem with the prefix cutting off, go to **AdminCP -> Appearance -> Style Properties, choose Forum/Node List, Node Last Post and remove this, on the textarea:
+**Tip**: If are having problems with the prefix getting cutt off, go to **AdminCP -> Appearance -> Style Properties** and choose **Forum/Node List**, then under **Node Last Post** simply remove this from the textarea:
 
 ```html
 overflow: hidden;
@@ -313,5 +315,5 @@ overflow: hidden;
 
 ![image 9](images/9.png)
 
-That's it!
+
 
