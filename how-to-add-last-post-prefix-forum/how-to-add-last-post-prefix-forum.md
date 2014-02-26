@@ -90,20 +90,20 @@ Wait a moment...
 
 But the function `prepareForumJoinOptions` doesn't join `xf_thread` so we have to do this for ourselves.
 
-After all, we conclude this:
+So we conclude this:
 
-- We have to 'overwrite' or modify two functions. I say 'overwrite' but we will actually add some new code to the functions.
+- We have to 'overwrite' two functions. I say overwrite but we will actually add some new code to the functions.
 - The functions are `getExtraDataForNodes` and `prepareForumJoinOptions`.
 - To do this we need to create Listeners. The listeners will extend the classes, consequently allowing us to write our own functions.
 
-I propose we do this as follows: we have the `last_post_id` inside `xf_forum` table. So let's join the post table where the `post_id` is equal to the `last_post_id`. Having the post details means we have the `thread_id` of that post. Then with the `thread_id`, we will join the `xf_thread` table where `thread_id` is equal to the `post.thread_id`. After that, we'll have the prefix_id.
+I propose we do the following. As we have the `last_post_id` inside the `xf_forum` table, let's join the post table where the `post_id` is equal to the `last_post_id`. Having the post details means we have the `thread_id` of that post. So then with the `thread_id`, we will join the `xf_thread` table where `thread_id` is equal to the `post.thread_id`. After that, we'll have the `prefix_id`.
 
 
 
 ### <a name="step_3__creating_the_listener"></a>Step 3 - Creating the Listener
 
 Let's create our folder and the `Listener.php` file. Go to `your_xenforo_root/library` and create a folder naming it to `ForumLastPostPrefix`.
-Inside this new created folder, create a file called: `Listener.php` and put the following contents:
+Inside this newly created folder, create a file called: `Listener.php` and add the following:
 
 ```php
 /**
@@ -133,7 +133,7 @@ class ForumLastPostPrefix_Listener
 }
 ```
 
-To the Listeners work, we have to create the Code Event Listeners. Go the **AdminCP -> Development -> Code Event Listeners**. Click in **+Create new Code Event Listener** and fill with the following data:
+To get the Listeners work, we have to create the associated Code Event Listeners. Go to **AdminCP -> Development -> Code Event Listeners**. Click on **+Create new Code Event Listener** and fill in the form with the following data:
 
 - **Listen to event**: load_class
 - **Event Hint**: XenForo_NodeHandler_Forum
