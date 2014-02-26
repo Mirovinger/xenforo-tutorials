@@ -17,9 +17,9 @@ This tutorial consists in 5 steps:
 
 ### <a name="step_1__creating_the_addon"></a>Step 1 - Creating the Add-on
 
-First we need to create a new add-on. This is a very simple step. To be able to create you need to be in Debug Mode. You can see how to put your forum in Debug Mode in this [link](http://xenforo.com/community/threads/frequently-asked-questions.5183/#post-248490).
+First we need to create a new add-on. This is easy enough to do, but first you need to enable Debug Mode. To do this, simply open up your *library/config.php* file, and add `$config['debug'] = true;` to it.
 
-To create a new add-on go to **AdminCP -> Home -> List Add-ons** and click in the button **Create Add-on**. In the following screen you need to fill those fields to create the add-on. Use the info below:
+Now to create a new add-on, go to **AdminCP -> Home -> List Add-ons** and click on **Create Add-on**. In this screen, fill out the fields as follows:
 
 - **Add-on ID**: ForumLastPostPrefix
 - **Title**: Forum Last Post Prefix
@@ -27,7 +27,7 @@ To create a new add-on go to **AdminCP -> Home -> List Add-ons** and click in th
 - **Version String**: 1.0.0
 - **Version ID**: 1
 
-And the rest of the fields just let in blank. We do not need to fill. This is the result:
+Leave the rest of the fields blank. This is what you should end up with:
 
 ![image 2](images/2.png)
 
