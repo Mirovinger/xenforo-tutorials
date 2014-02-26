@@ -102,7 +102,7 @@ I propose we do the following. As we have the `last_post_id` inside the `xf_foru
 
 ### <a name="step_3__creating_the_listener"></a>Step 3 - Creating the Listener
 
-Let's create our folder and the `Listener.php` file. Go to `your_xenforo_root/library` and create a folder naming it to `ForumLastPostPrefix`.
+Let's create our folder and the `Listener.php` file. Go to `your_xenforo_root/library` and create a folder naming it  `ForumLastPostPrefix`.
 Inside this newly created folder, create a file called: `Listener.php` and add the following:
 
 ```php
