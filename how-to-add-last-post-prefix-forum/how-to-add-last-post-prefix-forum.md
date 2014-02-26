@@ -163,20 +163,20 @@ With this code event, we are saying that our Listener should call the method `ex
 ### <a name="step_4__creating_the_classes"></a>Step 4 - Creating the classes
 
 
-To know where you need to create your classes is very easy, just see inside the Listener.php file that we are using the following classes to extend the XenForo core classes:
+Figuring out where you need to create your classes is easy, just look inside the *Listener.php* file, and you'll see that we are using the following classes to extend the XenForo core classes:
 
 `ForumLastPostPrefix_Extend_NodeHandler_Forum`
 `ForumLastPostPrefix_Extend_Model_Forum`
 
 
-So for the first file `ForumLastPostPrefix_Extend_NodeHandler_Forum` you can follow this path:
+So for the first, `ForumLastPostPrefix_Extend_NodeHandler_Forum`, you can follow this path to add your file:
 
-|-xenforo_root
-|---library
-|------ForumLastPostPrefix
-|--------- Extend (**new folder**)
-|------------ NodeHandler (**new folder**)
-|---------------- Forum.php (**new file**)
+|-xenforo_root  
+|---library  
+|------ForumLastPostPrefix  
+|--------- Extend (**new folder**)  
+|------------ NodeHandler (**new folder**)  
+|---------------- Forum.php (**new file**)  
 
 
 In the new file, put the contents below (don't forget to open the php tag):
@@ -206,12 +206,12 @@ class ForumLastPostPrefix_Extend_NodeHandler_Forum extends XFCP_ForumLastPostPre
 
 Now we will create the ForumLastPostPrefix_Extend_Model_Forum. You can follow this path:
 
-|-xenforo_root
-|---library
-|------ForumLastPostPrefix
-|--------- Extend
-|------------ Model (**new folder**)
-|---------------- Forum.php (**new file**)
+|-xenforo_root  
+|---library  
+|------ForumLastPostPrefix  
+|--------- Extend  
+|------------ Model (**new folder**)  
+|---------------- Forum.php (**new file**)  
 
 In the new file, put the contents below (don't forget to open the php tag):
 
