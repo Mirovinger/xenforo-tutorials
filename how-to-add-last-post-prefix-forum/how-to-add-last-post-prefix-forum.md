@@ -37,10 +37,10 @@ Click Save Add-on and your add-on is created!
 
 In the `xf_forum` table, we have the following columns:
 
-`last_post_id` => The ID of the last post in that forum
-`last_post_date` => The date of the last post in that forum
-`last_post_user_id` => The ID of the last user who posted in that forum
-`last_post_username` => The username of the user who posted in that forum
+`last_post_id` => The ID of the last post in that forum  
+`last_post_date` => The date of the last post in that forum  
+`last_post_user_id` => The ID of the last user who posted in that forum  
+`last_post_username` => The username of the user who posted in that forum  
 `last_thread_title` => The title of the last thread of that forum
 
 That's it. No more columns related to 'last' something in forums. So, how do we gonna take the prefix of the last post? That's pretty simple.
