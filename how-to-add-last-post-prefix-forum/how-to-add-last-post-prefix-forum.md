@@ -1,7 +1,7 @@
 ### How to add the last post prefix to forum list
 ###### 2014-02-25 20:35
 
-I will teach how to add the prefix of the last post on the forum list as this image show:
+In this tutorial I will show you how to add the prefix of the last post onto the forum list, as per this image:
 
 ![image 1](images/1.png)
 
