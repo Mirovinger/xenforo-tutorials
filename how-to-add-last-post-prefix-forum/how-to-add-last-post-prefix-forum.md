@@ -133,27 +133,29 @@ class ForumLastPostPrefix_Listener
 }
 ```
 
-To get the Listeners work, we have to create the associated Code Event Listeners. Go to **AdminCP -> Development -> Code Event Listeners**. Click on **+Create new Code Event Listener** and fill in the form with the following data:
+To get the Listeners to work, we have to create the associated Code Event Listeners. Go to **AdminCP -> Development -> Code Event Listeners**. Click on **+Create new Code Event Listener** and fill in the form with the following data:
 
 - **Listen to event**: load_class
 - **Event Hint**: XenForo_NodeHandler_Forum
 - **Execute Callback**:
     - **Class**: ForumLastPostPrefix_Listener
     - **Method**: extendNodeHandlerForum
+- **Description**: Listens for XenForo_NodeHandler_Forum
 - **Add-on**: Forum Last Post Prefix
 
 With this code event, we are saying that our Listener should call the method `extendNodeHandlerForum` every time the `XenForo_NodeHandler_Forum` class is instantiated and extend with our class.
 
-Now, another code event listener:
+Now, let's create another code event listener:
 
 - **Listen to event**: load_class_model
 - **Event Hint**: XenForo_Model_Forum
 - **Execute Callback**:
     - **Class**: ForumLastPostPrefix_Listener
     - **Method**: extendModelForum
+- **Description**: Listens for XenForo_Model_Forum
 - **Add-on**: Forum Last Post Prefix
 
-With this code event, we are saying that our Listener should call the method `extendModelForum` every time the `XenForo_Model_Forum` class is instantiated, and extend with our class. This is the results from both code events:
+With this code event, we are saying that our Listener should call the method `extendModelForum` each time the `XenForo_Model_Forum` class is instantiated, and extend it with our class. This is the results from both code events:
 
 ![image 3](images/3.png)
 
