@@ -7,7 +7,7 @@ In this tutorial I will show you how to add the prefix of the last post onto the
 
 ## Steps
 
-This tutorial consists of 5, easy to follow steps:
+This tutorial consists of 5 easy to follow steps:
 
 - [Step 1 - Creating the Add-on](#step_1__creating_the_addon)
 - [Step 2 - Understanding what we'll do](#step_2__understanding_what_we_ll_do)
