@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="ForumLastPostPrefix" title="Forum Last Post Prefix" version_string="1.0.0" version_id="1" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class" execute_order="10" callback_class="ForumLastPostPrefix_Listener" callback_method="extendNodeHandlerForum" active="1" hint="XenForo_NodeHandler_Forum" description=""/>
+    <listener event_id="load_class" execute_order="10" callback_class="ForumLastPostPrefix_Listener" callback_method="extendNodeHandlerCategory" active="1" hint="XenForo_NodeHandler_Category" description="XenForo_NodeHandler_Category"/>
+    <listener event_id="load_class_model" execute_order="10" callback_class="ForumLastPostPrefix_Listener" callback_method="extendModelForum" active="1" hint="XenForo_Model_Forum" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases/>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="node_category_level_2" modification_key="LastPosPrefix_node_category_level_2" description="" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<span class="lastThreadTitle"><span>{xen:phrase latest}:</span> <a href="{xen:link posts, $category.lastPost}" title="{$category.lastPost.title}">]]></find>
+      <replace><![CDATA[<span class="lastThreadTitle"><span>{xen:phrase latest}:</span><a href="{xen:link posts, $category.lastPost}" title="{$category.lastPost.title}"> {xen:helper threadPrefix, $category}]]></replace>
+    </modification>
+    <modification template="node_forum_level_2" modification_key="LastPosPrefix_node_forum_level_2" description="" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<span class="lastThreadTitle"><span>{xen:phrase latest}:</span> <a href="{xen:link posts, $forum.lastPost}" title="{$forum.lastPost.title}">]]></find>
+      <replace><![CDATA[<span class="lastThreadTitle"><span>{xen:phrase latest}:</span> <a href="{xen:link posts, $forum.lastPost}" title="{$forum.lastPost.title}"> {xen:helper threadPrefix, $forum}]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+</addon>
