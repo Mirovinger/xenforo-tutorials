@@ -51,7 +51,7 @@ This first option will hold the forum id that we want to get threads from. Follo
 - **Option ID**: mtcFromForum
 - **Add-on**: Cron to Move Threads Automatically
 - **Title**: Forum to get threads
-- **Explanation**: Insert the Forum ID of the forum you want to get threasd from.
+- **Explanation**: Insert the Forum ID of the forum you want to get threads from.
 - **Edit Format**: SpinBox
 - **Format Parameters**: Min = 1
 - **Data Type**: Unsigned Integer
@@ -63,7 +63,7 @@ This first option will hold the forum id that we want to get threads from. Follo
 - **Option ID**: mtcFromPrefix
 - **Add-on**: Cron to Move Threads Automatically
 - **Title**: Get Threads with this prefix
-- **Explanation**: Insert the Prefix ID of the prefix you want to get threas. The cron will only take ALL threads that have this specific prefix.
+- **Explanation**: Insert the Prefix ID of the prefix you want to get threads. The cron will only take ALL threads that have this specific prefix.
 - **Edit Format**: SpinBox
 - **Format Parameters**: Min = 1
 - **Data Type**: Unsigned Integer
@@ -143,7 +143,7 @@ Inside the new folder, create a new file called CronEntry.php. Open this file an
 ```php
 <?php
 /**
-* Cron entry of the tutorial How to create a Cron Entry to move threds (with options!).
+* Cron entry of the tutorial How to create a Cron Entry to move threads (with options!).
 *
 * MoveThreadCron = Name of our folder (and add-on too!)
 * CronEntry = name of this file!
@@ -167,11 +167,11 @@ class MoveThreadCron_CronEntry
         *
         */
         $cronOptions = array(
-            'fromForum'    => $options->mtcFromForum,
-            'toForum'        => $options->mtcToForum,
-            'fromPrefix'    => $options->mtcFromPrefix,
-            'toPrefix'        => $options->mtcToPrefix,
-            'ammount'        => $options->mtcAmmount
+            'fromForum'  => $options->mtcFromForum,
+            'toForum'    => $options->mtcToForum,
+            'fromPrefix' => $options->mtcFromPrefix,
+            'toPrefix'   => $options->mtcToPrefix,
+            'ammount'    => $options->mtcAmmount
         );
 
         /*
